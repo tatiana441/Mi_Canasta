@@ -1,6 +1,7 @@
 # Mi_Canasta
 
-Repositorio de Ciclo 3 MisiónTIC 2022 - Proyecto MI canasta
+Repositorio de Ciclo 3 MisiónTIC 2022 - Proyecto MI canasta 22/09/2021 7:56pc
+prueba...
 
 ![bolsa](img/bolsa.png)
 
