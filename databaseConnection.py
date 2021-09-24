@@ -1,6 +1,6 @@
 import psycopg2
 
-conn = psycopg2.connect(
+conn = psycopg2.connect( #conectar a una base de datos
     host="ec2-23-20-208-173.compute-1.amazonaws.com",
     database="d2q63ki9v18tbk",
     user="ckgpkyndtdeeca",
@@ -8,7 +8,8 @@ conn = psycopg2.connect(
 )
 cur = conn.cursor()
 
+cur.execute("SELECT * FROM usuarios")#funcion traer los datos de la tabla seleccionada
 
-cur.execute("SELECT * FROM usuarios")
-print(cur.fetchall())
-cur.close()
+print(cur.fetchall())#imprimir en consola en forma de tupla con listas por cada fila de la tabla
+
+cur.close() #cerrar base de datos
