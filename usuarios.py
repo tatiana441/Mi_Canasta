@@ -58,15 +58,4 @@ class Usuarios:
         self.conn.commit()
         self.cur.close()
         self.conn.close()
-<<<<<<< HEAD
-    def get_nombre(self):
-        self.cur.execute("SELECT * FROM usuarios WHERE nombre=%s", (self.nombre,))
-        
-        usuarios = self.cur.fetchone()
-        self.id = usuarios[3]
-        self.nombre = usuarios[0]
-        self.email = usuarios[2]
-        self.password = usuarios[1]
-=======
 
->>>>>>> 52745f995ae5f7ca0a02a92fd1eb5855c3fd27b1
