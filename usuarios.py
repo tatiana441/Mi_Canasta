@@ -1,10 +1,9 @@
-
-from _typeshed import Self
 import psycopg2
 import databaseConnection
 
 class Usuarios:
 
+    id = 0
     nombre = ""
     password = ""
     email = ""
@@ -30,6 +29,11 @@ class Usuarios:
         self.password = password
         self.email = email
 
+    def __init__(self, nombre):
+        self.nombre = nombre
+        
+        
+
     def list_usuarios(self):
         usuarios_list = [] 
         self.cur.execute("SELECT * FROM usuarios")
@@ -37,19 +41,28 @@ class Usuarios:
         self.cur.close() 
         return usuarios_list
 
+
     def create(self):
-        self.cur.execute(
-            "INSERT INTO usuarios(nombre,password,email) VALUES (%s,%s,%s)", (self.nombre, self.password, self.email))
-        self.conn.commit()
-        self.cur.close()
-        self.conn.close()
+        try:    
+            self.cur.execute(
+                "INSERT INTO usuarios(nombre,password,email) VALUES (%s,%s,%s)", (self.nombre, self.password, self.email))
+            self.conn.commit()
+        except Exception:
+            print("Error inserting")
+        finally:
+            self.cur.close()
+            self.conn.close()
 
     def delete(self):
         self.cur.execute("DELETE FROM usuarios WHERE nombre=%S",(self.nombre,))
         self.conn.commit()
         self.cur.close()
         self.conn.close()
-print("hello world")
-print("hello world")
-print("hello world")
-print("hello world")
+    def get_nombre(self):
+        self.cur.execute("SELECT * FROM usuarios WHERE nombre=%s", (self.nombre,))
+        
+        usuarios = self.cur.fetchone()
+        self.id = usuarios[3]
+        self.nombre = usuarios[0]
+        self.email = usuarios[2]
+        self.password = usuarios[1]
