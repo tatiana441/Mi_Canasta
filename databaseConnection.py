@@ -12,3 +12,4 @@ def create_connection():
 
     return cur
     print("hello world")
+    print("hello world")

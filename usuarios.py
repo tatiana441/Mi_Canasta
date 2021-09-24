@@ -50,3 +50,4 @@ class Usuarios:
         self.cur.close()
         self.conn.close()
 print("hello world")
+print("hello world")
