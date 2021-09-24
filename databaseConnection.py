@@ -8,6 +8,8 @@ conn = psycopg2.connect(
 )
 cur = conn.cursor()
 
+
 cur.execute("SELECT * FROM usuarios")
 print(cur.fetchall())
 cur.close()
+print("Mnesaje de prubea")
