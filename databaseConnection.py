@@ -11,7 +11,3 @@ def create_connection():
     cur = conn.cursor()
 
     return cur
-    print("hello world")
-    print("hello world")
-    print("hello world")
-    print("hello world")
