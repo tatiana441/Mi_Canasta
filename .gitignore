@@ -1,4 +1,0 @@
-#para que ignore ciertos archivos que no se deben subir Y QUE LOS IGNORE
-#nombre del archivo *.extension
-
-__pycache__
