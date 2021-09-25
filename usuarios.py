@@ -58,4 +58,4 @@ class Usuarios:
         self.conn.commit()
         self.cur.close()
         self.conn.close()
-
+#ELIMINAR 
