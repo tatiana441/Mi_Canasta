@@ -1,7 +1,6 @@
 # Mi_Canasta
 
-Repositorio de Ciclo 3 MisiónTIC 2022 - Proyecto MI canasta 22/09/2021 7:56pc
-prueba....
+Repositorio de Ciclo 3 - MisiónTIC 2022 - Proyecto Mi Canasta
 
 ![logo](img/logo.png)
 
@@ -26,4 +25,4 @@ usuario tenga pensado realizar compras, también se tendrá la opción de elabor
 dónde el usuario pueda crear, ver, editar y eliminar elementos pendientes a comprar y poder
 asignar un valor aproximado a cada producto, pudiendo visualizar el listado de su compra
 para el sigue mes, como también el valor aproximado que el usuario deberá pagar por sus
-compras facilitando presupuestarse, ahorrando tiempo y dinero
+compras facilitando presupuestarse, ahorrando tiempo y dinero.
