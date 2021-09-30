@@ -1,0 +1,43 @@
+{% include 'header.html' %}
+{% with messages= get_flashed_messages() %}
+
+    {% if messages %}
+        <div class="alert alert-danger" role="alert">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
+
+<form method="post" action="/store_product" enctype="multipart/form-data">
+    <div class="card">
+        <div class="card-header">
+                Registro de Producto
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Producto</h5>
+            <p class="card-text">
+                <div class="form-group">
+                    <label for="txtNombre">Nombre</label>
+                    <input id="txtNombre" class="form-control" type="text" name="txtNombre">
+                </div>
+                <div class="form-group">
+                    <label for="txtCosto">Costo</label>
+                    <input id="txtCosto" class="form-control" type="text" name="txtCosto">
+                </div>
+                <div class="form-group">
+                    <label for="txtCategoria">Categoria</label>
+                    <input id="txtCategoria" class="form-control" type="text" name="txtCategoria">
+                </div>
+                <br>
+                <div class="form-group">
+                    <input class="btn btn-primary" type="submit" value="Agregar">
+                    <a href="{{url_for('index_product')}}" class="btn btn-secondary">Regresar</a>            
+                </div>
+            </p>
+        </div>
+    </div>
+</form>
+
+{% include 'footer.html' %}
