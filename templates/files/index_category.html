@@ -1,0 +1,28 @@
+{% include 'header.html' %}
+        <br>
+            <a style="margin-left: 20px;" href="{{url_for('create_category')}}" class="btn btn-success">Nueva Categoria</a>
+            <br>
+        <br>
+        <table class="table table-light">
+            <thead class="thead-light">
+                <tr>
+                    <th>Id</th>
+                    <th>Categoria</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for categoria in categorias %}
+                <tr>
+                    <td>{{categoria[0]}}</td>
+                    <td>{{categoria[1]}}</td>
+                    <td>
+                        <a class="btn btn-warning" href="/edit_category/{{categoria[0]}}">Editar</a>
+                        <a onclick="return confirm('¿Está seguro de borrar éste registro?')" class="btn btn-danger" href="/destroy_category/{{categoria[0]}}">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+{% include 'footer.html' %}
