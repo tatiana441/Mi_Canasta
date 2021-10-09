@@ -2,7 +2,7 @@
 
 Repositorio de Ciclo 3 - MisiónTIC 2022 - Proyecto Mi Canasta
 
-![logo](templates/img/logo.png)
+![logo](templatess/tatic/img/logo.png)
 
 OBJETIVO
 Organiza tu bolsa es una aplicación web que permite registrar artículos de compra y su
