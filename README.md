@@ -8,6 +8,7 @@ OBJETIVO
 Organiza tu bolsa es una aplicación web que permite registrar artículos de compra y su
 costo, Para llevar el control de los gastos o presupuesto que el usuario debe disponer para
 ir al mercado mes a mes controlando sus gastos y disminuyendo el tiempo en sus compras.
+
 MUNDO DEL PROBLEMA
 En diversas ocasiones la mala administración y organización al momento de hacer
 compras conlleva a tener una vida financiera llena de infortunios. Muchas personas en

@@ -1,14 +1,33 @@
-from flask import Flask
-from flask import render_template,request,redirect,flash
-from flask import send_from_directory
+from flask import (
+    Flask,
+    g,
+    render_template,
+    request,
+    redirect,
+    flash,
+    session,
+    url_for
+)
 from flask.helpers import url_for
 from flaskext.mysql import MySQL
 from pymysql.cursors import Cursor
 
-import os
+class User:
+    def __init__(self, id, username, password):
+        self.id = id
+        self.username = username
+        self.password = password
+
+    def __repr__(self):
+        return f'<User: {self.username}>'
+
+users = []
+users.append(User(id=1, username='admin', password='1234'))
+users.append(User(id=1, username='usuario', password='1234'))
+users.append(User(id=1, username='invitado', password='1234'))
 
 app= Flask(__name__)
-app.secret_key="MisionTIC2022"
+app.secret_key='MisionTIC2022'
 mysql=MySQL()
 app.config['MYSQL_DATABASE_HOST']='localhost'
 app.config['MYSQL_DATABASE_USER']='root'
@@ -16,19 +35,41 @@ app.config['MYSQL_DATABASE_PASSWORD']='1234'
 app.config['MYSQL_DATABASE_DB']='canasta'
 mysql.init_app(app)
 
-CARPETA= os.path.join('img')
-app.config['CARPETA']=CARPETA
+@app.before_request
+def before_request():
+    g.user = None
 
-@app.route('/img/<imgName>')
-def img(imgName):
-    return send_from_directory(app.config['CARPETA'],imgName)
+    if 'user_id' in session:
+        user = [x for x in users if x.id == session['user_id']][0]
+        g.user = user
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+    error = None
+    if request.method == 'POST':
+        session.pop('user_id', None)
+
+        username = request.form['username']
+        password = request.form['password']
+
+        user = [x for x in users if x.username == username][0]
+        if user and user.password == password:
+            session['user_id'] = user.id
+            return redirect(url_for('index_product'))
+        
+        return redirect(url_for('login'))
+
+    return render_template('login.html', error=error)
+
 @app.route('/index_product')
 def index_product():
+    if not g.user:
+        return redirect(url_for('login'))
+
     sql="SELECT * FROM productos;"
     conn=mysql.connect()
     cursor=conn.cursor()

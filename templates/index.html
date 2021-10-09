@@ -1,3 +1,206 @@
-{% include 'header.html' %}
-    
-{% include 'footer.html' %}
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+		<title>Mi Canasta</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="{{ url_for('static',filename='/images/favicon.png') }}" type="image/gif" />
+		<link rel="stylesheet" href="{{ url_for('static',filename='/css/bootstrap.min.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static',filename='/css/style.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static',filename='/css/responsive.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static',filename='/css/jquery.mCustomScrollbar.min.css') }}">
+		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+	</head>
+	<body class="main-layout">
+	    <div class="loader_bg">
+		  <div class="loader"><img src="{{ url_for('static',filename='/images/loading.gif') }}" alt="#" />
+		  </div>
+	    </div>
+		  <header>
+			<div class="header-top">
+			  <div class="header">
+				<div class="container-fluid">
+				  <div class="row">
+					<div class="col-xl-2 col-lg-4 col-md-4 col-sm-3 col logo_section">
+					  <div class="full">
+						<div class="center-desk">
+						  <div class="logo">
+							<a href="{{ url_for('index') }}"><img src="{{ url_for('static',filename='/images/logo.png') }}" alt="#" /></a>
+						  </div>
+						</div>
+					  </div>
+					</div>
+					<div class="col-xl-10 col-lg-8 col-md-8 col-sm-9">         
+					  <div class="menu-area">
+						<div class="limit-box">
+						  <nav class="main-menu ">
+							<ul class="menu-area-main">
+							  <li class="active"> <a href="{{ url_for('index') }}">Inicio</a> </li>
+							  <li> <a href="#nosotros">nosotros</a> </li>
+							  <li> <a href="#objetivo">objetivo</a> </li>
+							  <li> <a href="#problema">problema</a> </li>
+							  <li> <a href="#justificacion">justificacion</a> </li>
+							  <li> <a href="{{ url_for('login') }}">ingreso</a> </li>
+							</ul>
+						  </nav>
+						</div>
+					  </div> 
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </header>
+		<div id="nosotros" class="vegetable">
+		  <div class="container">
+			<div class="row">
+			  <div class="col-md-12">
+				<div  class="titlepage">
+				  <h2> MISION TIC <strong class="llow">2022</strong> </h2>
+				</div>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 ">
+				<div class="vegetable_shop">
+				  <h3>Nosotros</h3>
+				  <p>Somos el grupo de trabajo # 3, conformado por:<br><br>Tatiana Muñoz - Scrum Manager<br>Kevin Rondón - Desarrollador<br>Miguel Acevedo - Desarrollador<br>Luis Torres - Desarrollador<br>Fredy Sanabria - Desarrollador </p>
+				</div>
+			  </div>
+			   <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 ">
+				<div class="vegetable_img">
+				 <figure><img src="{{ url_for('static',filename='/images/v1.jpg') }}" alt="#"/></figure>
+				 <span>01</span>
+				</div>
+			  </div>
+			   <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 ">
+				<div class="vegetable_img margin_top">
+				 <figure><img src="{{ url_for('static',filename='/images/v2.jpg') }}" alt="#"/></figure>
+				 <span>02</span>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div id="objetivo" class="about">
+		  <div class="container-fluid">
+			<div class="row">
+			  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+				<div class="about-box">
+				  <h2>OBJETIVO</h2>
+				  <p>Organiza tu bolsa es una aplicación web que permite registrar artículos de compra y su costo, Para llevar el control de los gastos o presupuesto que el usuario debe disponer para ir al mercado mes a mes controlando sus gastos y disminuyendo el tiempo en sus compras.</p>
+				  <a href="#">Volver arriba</a>
+				</div>
+			  </div>
+			  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 padding_rl">
+				<div class="about-box_img">
+				  <figure><img src="{{ url_for('static',filename='/images/about.jpg') }}" alt="#" /></figure>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div id="problema" class="about">
+		  <div class="container-fluid">
+			<div class="row">
+			  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+				<div class="about-box">
+				  <h2>PROBLEMA</h2>
+				  <p>En diversas ocasiones la mala administración y organización al momento de hacer compras conlleva a tener una vida financiera llena de infortunios. Muchas personas en la actualidad trabajan para cubrir las deudas innecesarias generadas por compras inútiles y que cada vez se van acumulando cada vez más al punto de tener que pasar el resto de la vida pagando a un banco o a terceros.</p>
+				  <a href="#">Volver arriba</a>
+				</div>
+			  </div>
+			  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 padding_rl">
+				<div class="about-box_img">
+				  <figure><img src="{{ url_for('static',filename='/images/about.jpg') }}" alt="#" /></figure>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div id="justificacion" class="about">
+		  <div class="container-fluid">
+			<div class="row">
+			  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+				<div class="about-box">
+				  <h2>JUSTIFICACION</h2>
+				  <p>Debido al constante cambio de los productos de consumo, se vuelve complejo realizar un presupuesto para las compras mensuales de sus productos, por otra parte, siempre es complicado recordar todo aquello que se necesita comprar o adquirir cada mes. Por medio de Organiza tu bolsa se pretende facilitar la realización de un presupuesto mensual además de una lista de los productos que se necesitan para la próxima vez que el usuario tenga pensado realizar compras, también se tendrá la opción de elaborar una lista dónde el usuario pueda crear, ver, editar y eliminar elementos pendientes a comprar y poder asignar un valor aproximado a cada producto, pudiendo visualizar el listado de su compra para el sigue mes, como también el valor aproximado que el usuario deberá pagar por sus compras facilitando presupuestarse, ahorrando tiempo y dinero.</p>
+				  <a href="#">Volver arriba</a>
+				</div>
+			  </div>
+			  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 padding_rl">
+				<div class="about-box_img">
+				  <figure><img src="{{ url_for('static',filename='/images/about.jpg') }}" alt="#" /></figure>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<br><br><br>
+		<footr>
+		  <div class="footer ">
+			<div class="container">
+			  <div class="row">
+				<div class="col-md-12">
+				  <a href="#" class="logo_footer"> <img src="{{ url_for('static',filename='/images/logo.png') }}" width="20%" alt="#"/></a>
+				</div>
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
+				  <div class="row">
+					<div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 ">
+					  <div class="address">
+						<h3>Equipo </h3>
+						<ul class="loca">
+						  <li><a href="#"></a>Tatiana Muñoz </li>
+						  <li><a href="#"></a>Kevin Rondón </li>
+						  <li><a href="#"></a>Luis Torres </li>
+						  <li><a href="#"></a>Fredy Sanabria</li>
+						</ul>
+					  </div>
+					</div>
+					<div class="col-lg-4 col-md-6 col-sm-6">
+					  <div class="address">
+						<h3>Redes Sociales</h3>
+						<ul class="Menu_footer">
+						  <li class="active"> <a href="#">Facebook</a> </li>
+						  <li><a href="#">Instragram</a> </li>
+						  <li><a href="#">Linkdin</a> </li>
+						  <li><a href="#">Twitter</a> </li>
+						</ul>
+					  </div>
+					</div>
+					<div class="col-lg-4 col-md-6 col-sm-6 ">
+					  <div class="address">
+						<h3>Newsletter</h3>
+						<form class="news">
+						  <input class="newslatter" placeholder="Ingrese su correo" type="text" name=" Enter your email">
+						  <button class="submit">Subscribirme</button>
+						</form>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<div class="copyright">
+			  <div class="container">
+				<p>Todos los derechos reservados © 2021</p>
+			  </div>
+			</div>
+		  </div>
+		</footr>
+		<script src="{{ url_for('static',filename='/js/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='/js/popper.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='/js/bootstrap.bundle.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='/js/jquery-3.0.0.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='/js/plugin.js') }}"></script>
+		<script src="{{ url_for('static',filename='/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='/js/custom.js') }}"></script>
+		<script src"https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.j></script>
+	</body>
+</html>

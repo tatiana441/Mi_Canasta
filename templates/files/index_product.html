@@ -1,6 +1,7 @@
 {% include 'header.html' %}
+
         <br>
-            <a style="margin-left: 20px;" href="{{url_for('create_product')}}" class="btn btn-success">Nuevo Producto</a>
+            <a style="margin-left: 20px;" href="{{ url_for('create_product') }}" class="btn btn-success">Nuevo Producto</a>
             <br>
         <br>
         <table class="table table-light">
@@ -15,16 +16,16 @@
             </thead>
             <tbody>
                 {% for producto in productos %}
-                <tr>
-                    <td>{{producto[0]}}</td>
-                    <td>{{producto[1]}}</td>
-                    <td>{{producto[2]}}</td>
-                    <td>{{producto[3]}}</td>
-                    <td>
-                        <a class="btn btn-warning" href="/edit_product/{{producto[0]}}">Editar</a>
-                        <a onclick="return confirm('¿Está seguro de borrar éste registro?')" class="btn btn-danger" href="/destroy_product/{{producto[0]}}">Eliminar</a>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>{{ producto[0] }}</td>
+                        <td>{{ producto[1] }}</td>
+                        <td>{{ producto[2] }}</td>
+                        <td>{{ producto[3] }}</td>
+                        <td>
+                            <a class="btn btn-warning" href="/edit_product/{{ producto[0] }}">Editar</a>
+                            <a onclick="return confirm('¿Está seguro de borrar éste registro?')" class="btn btn-danger" href="/destroy_product/{{producto[0]}}">Eliminar</a>
+                        </td>
+                    </tr>
                 {% endfor %}
             </tbody>
         </table>
