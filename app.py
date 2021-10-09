@@ -103,7 +103,7 @@ def update_product():
     cursor=conn.cursor()
     cursor.execute(sql,datos)
     conn.commit()
-    return redirect('/')
+    return redirect('/index_product')
 
 @app.route('/store_product', methods=['POST'])
 def storage_product():
@@ -121,7 +121,7 @@ def storage_product():
     cursor=conn.cursor()
     cursor.execute(sql,datos)
     conn.commit()
-    return redirect('/')
+    return redirect('/index_product')
 
 @app.route('/destroy_product/<int:idProd>')
 def destroy_product(idProd):
@@ -129,7 +129,7 @@ def destroy_product(idProd):
     cursor=conn.cursor()
     cursor.execute("DELETE FROM productos WHERE idProd=%s", (idProd))
     conn.commit()
-    return redirect('/')
+    return redirect('/index_product')
 
 @app.route('/index_category')
 def index_category():
@@ -191,5 +191,4 @@ def destroy_category(idCat):
     return redirect('/index_category')
 
 if __name__== '__main__':
-    app.run(debug=True)
-
+    app.run(debug=True, port=82, host="192.168.1.2")
